@@ -9,7 +9,7 @@ class person:
     def __init__(self,name,age,gender):
         self.name = name
         self.age = age
-        self.gender = gender
+        self.gender = gender    
     def info(self):
         print("***Person information***")
         print("name:",self.name)
@@ -36,19 +36,25 @@ p2.info()
 #    >Print the total number of employees after adding each new employee.
 #    >Check whether changing the total_employees in one instance affects the others.
 class Company:
-    total=0
-    def __init__(self):
-        self.employees={}
-    def employee_info(self,name,department):
-        self.employees[name]=department
-        Company.total+=1 #accessing static variable inside insatance method using class name
-        print("employee name: ",name, "Dept: ",department )
-em=Company()
-em.employee_info("Raju","Teste")  
-em.employee_info("vibhav","Tester")
-em.employee_info("Mahesh","Software Executive")
-print("Total Employees: ",Company.total)  #Here Total employees is static variable we have to access outside class using class name
- 
+    Total_employees=0
+    def __init__(self,name,department):
+        self.name=name
+        self.department=department
+        Company.Total_employees+=1
+        print("Total employees in company ",Company.Total_employees)
+    def display_info(self):
+        return  self.name ,self.department
+emp1=Company("Mukesh","Developer")
+emp2=Company("Dinesh","Tester")
+emp3=Company("John","Execxutive")      
+print(emp1.display_info())
+print(emp2.display_info())
+print(emp3.display_info())
+#>Check whether changing the total_employees in one instance affects the others.
+emp1.Total_employees=+100
+print("Total employees in company ",Company.Total_employees)#does not affect as Total employees is taken as static variable
+   
+
  
 # 3.Create a class Rectangle that has instance variables length and width. 
 #   Add a method calculate_area that calculates and prints the area of the rectangle using local variables inside the method.
