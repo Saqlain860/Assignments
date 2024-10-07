@@ -156,8 +156,7 @@ class Manager(Employee):
 
 class Intern(Developer):
     def __init__(self,name,salary,programming_language,internship_duration):
-        Employee.__init__(self,name,salary)
-        Developer.__init__(self,name,salary,programming_language)
+        super().__init__(name,salary,programming_language)
         self.internship_duration = internship_duration
 
     def display(self):
