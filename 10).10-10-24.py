@@ -283,7 +283,7 @@ def borrow_item(item):
 book = Book("1984", "George Orwell", 3)
 dvd = DVD("Inception", "Christopher Nolan", "148 minutes")
 
-borrow_item(book) 
+borrow_item(book)   
 borrow_item(dvd)   
 
   
